@@ -57,6 +57,7 @@ const actions = {
   },
   getMe: async ({commit}: StoreActionContext) => {
     const res = await get(`/users/me`);
+    console.warn(res)
     commit('setMe', res.data);
   },
   postMe: async (ctx: StoreActionContext, me: User) => {

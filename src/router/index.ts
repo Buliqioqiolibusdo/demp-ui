@@ -52,7 +52,7 @@ export const getDefaultSidebarMenuItems = (): MenuItem[] => {
 
 export const getDefaultHiddenMenuItems = (): MenuItem[] => {
   const items = [
-    {path: '/misc/disclaimer', title: 'router.menuItems.misc.disclaimer', icon: ['fa', 'file-signature']},
+    // {path: '/misc/disclaimer', title: 'router.menuItems.misc.disclaimer', icon: ['fa', 'file-signature']},
     {path: '/misc/my-settings', title: 'router.menuItems.misc.mySettings', icon: ['fa', 'user-cog']},
   ] as MenuItem[];
   return items.map(d => {

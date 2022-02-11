@@ -47,11 +47,9 @@
           </span>
           <template #dropdown>
             <el-dropdown-menu>
-              <el-dropdown-item
-                v-track="{code: 'click_header_disclaimer'}"
-                @click="onClickDisclaimer"
-              >
-                {{ t('layouts.components.header.disclaimer') }}
+              <el-dropdown-item>
+                Signed in as 
+                <strong class="css-truncate-target">buliqioqio</strong>
               </el-dropdown-item>
               <el-dropdown-item
                 v-track="{code: 'click_header_my_settings'}"
@@ -75,6 +73,8 @@
 
 <script lang="ts">
 import {computed, defineComponent} from 'vue';
+
+
 import {useStore} from 'vuex';
 import variables from '../../styles/variables.scss';
 import {useRouter} from 'vue-router';
@@ -87,6 +87,9 @@ export default defineComponent({
   components: {
     ArrowDown,
   },
+  onCreated(){
+    console.warn('sssssssssssssssssssssss');
+  },
   setup() {
     // i18n
     const {t, locale} = useI18n();
@@ -96,6 +99,8 @@ export default defineComponent({
 
     // store
     const store = useStore();
+
+
 
     // store states
     const {
@@ -112,6 +117,8 @@ export default defineComponent({
       return t('global.lang', [], {locale: locale.value});
     });
 
+    
+
     // set language
     const setLang = (lang: Lang) => {
       setGlobalLang(lang);
@@ -119,7 +126,9 @@ export default defineComponent({
 
     // current user's username
     const username = computed<string | undefined>(() => {
+      console.warn('fdgfgfgfgfgfgfgfg');
       const me = store.getters['user/me'] as User | undefined;
+console.warn(store);
       if (!me) return;
       return me.username;
     });
@@ -139,9 +148,9 @@ export default defineComponent({
     };
 
     // on click disclaimer
-    const onClickDisclaimer = () => {
-      router.push('/misc/disclaimer');
-    };
+    // const onClickDisclaimer = () => {
+    //   router.push('/misc/disclaimer');
+    // };
 
     // on click my settings
     const onClickMySettings = () => {
@@ -156,7 +165,7 @@ export default defineComponent({
       username,
       setLang,
       onLogout,
-      onClickDisclaimer,
+      // onClickDisclaimer,
       onClickMySettings,
       t,
     };
