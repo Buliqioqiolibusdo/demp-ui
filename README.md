@@ -3,6 +3,8 @@
 This is the UI components and modules to support the frontend development
 for [Crawlab](https://github.com/crawlab-team/crawlab).
 
+## 环境依赖 node v16.13.2
+
 ## How to Install
 
 Use `npm` or `yarn` to install `crawlab-ui`.
