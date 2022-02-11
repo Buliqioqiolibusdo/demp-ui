@@ -23,6 +23,6 @@ const views: LViews = {
   tags,
   tokens,
   plugins,
-  misc,
+  // misc,
 };
 export default views;

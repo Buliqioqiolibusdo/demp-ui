@@ -12,7 +12,7 @@ function initCanvas() {
   // more siblings == bigger node
   SIBLINGS_LIMIT = 100
   // default node margin
-  DENSITY = 120
+  DENSITY = 140
   // total number of nodes used (incremented after creation)
   NODES_QTY = 0
   // avoid nodes spreading

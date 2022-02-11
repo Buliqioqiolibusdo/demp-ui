@@ -421,6 +421,9 @@ $light_gray: #aaa;
       cursor: pointer;
     }
 
+    .reference-from {
+      cursor: pointer;
+    }
     .sign-in,
     .sign-up {
       cursor: pointer;
@@ -428,6 +431,7 @@ $light_gray: #aaa;
       font-weight: 600;
     }
   }
+
 
   .lang {
     margin-top: 20px;
