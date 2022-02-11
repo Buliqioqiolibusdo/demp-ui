@@ -45,7 +45,7 @@
         >
           <MenuItemIcon :item="item" size="normal"/>
           <template #title>
-            <span class="menu-item-title">{{ item.title }}</span>
+            <span class="menu-item-title">{{ t(item.title) }}</span>
           </template>
         </el-menu-item>
       </el-menu>
@@ -61,6 +61,7 @@ import variables from '@/styles/variables.scss';
 import logo from '@/assets/xccinner1.jpg';
 import MenuItemIcon from '@/components/icon/MenuItemIcon.vue';
 import {getPrimaryPath} from '@/utils/path';
+import {useI18n} from 'vue-i18n';
 
 export default defineComponent({
   name: 'Sidebar',
@@ -72,8 +73,10 @@ export default defineComponent({
     const route = useRoute();
     const store = useStore();
     const {layout} = store.state as RootStoreState;
-    const {menuItems} = layout;
+    // const {menuItems} = layout;
     const storeNamespace = 'layout';
+    const {t} = useI18n();
+    const menuItems = computed<MenuItem[]>(() => layout.menuItems);
 
     const activePath = computed<string>(() => {
       return getPrimaryPath(route.path);
@@ -106,6 +109,7 @@ export default defineComponent({
       onMenuItemClick,
       toggleSidebar,
       ...variables,
+      t,
     };
   },
 });

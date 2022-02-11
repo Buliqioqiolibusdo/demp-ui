@@ -9,7 +9,6 @@ import users from './users';
 import tags from './tags';
 import tokens from './tokens';
 import plugins from './plugins';
-import misc from "./misc";
 
 const views: LViews = {
   login,
@@ -23,6 +22,5 @@ const views: LViews = {
   tags,
   tokens,
   plugins,
-  // misc,
 };
 export default views;

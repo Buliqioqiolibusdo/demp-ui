@@ -10,7 +10,6 @@ import user from '@/router/user';
 import tag from '@/router/tag';
 import token from '@/router/token';
 import plugin from '@/router/plugin';
-import misc from "@/router/misc";
 import {initRouterAuth} from '@/router/hooks/auth';
 import {initRouterStats} from '@/router/hooks/stats';
 import NormalLayout from '@/layouts/NormalLayout.vue';
@@ -32,7 +31,6 @@ export const getDefaultRoutes = (): Array<RouteRecordRaw> => [
       ...tag,
       ...token,
       ...plugin,
-      ...misc,
     ],
   },
 ];
@@ -66,7 +64,6 @@ export const getDefaultHiddenMenuItems = (): MenuItem[] => {
 export const getDefaultMenuItems = (): MenuItem[] => {
   return [
     ...getDefaultSidebarMenuItems(),
-    ...getDefaultHiddenMenuItems(),
   ];
 };
 
