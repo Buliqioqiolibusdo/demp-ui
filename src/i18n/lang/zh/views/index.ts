@@ -9,6 +9,7 @@ import users from './users';
 import tags from './tags';
 import tokens from './tokens';
 import plugins from './plugins';
+import ifm from './ifm';
 
 const views: LViews = {
   login,
@@ -22,5 +23,6 @@ const views: LViews = {
   tags,
   tokens,
   plugins,
+  ifm,
 };
 export default views;

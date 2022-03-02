@@ -4,6 +4,7 @@ const users: LViewsUsers = {
       username: 'Username',
       email: 'Email',
       role: 'Role',
+      name:'Name'
     }
   },
   navActions: {

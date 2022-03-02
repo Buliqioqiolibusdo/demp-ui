@@ -10,6 +10,7 @@ import user from '@/router/user';
 import tag from '@/router/tag';
 import token from '@/router/token';
 import plugin from '@/router/plugin';
+import ifm from '@/router/ifm';
 import {initRouterAuth} from '@/router/hooks/auth';
 import {initRouterStats} from '@/router/hooks/stats';
 import NormalLayout from '@/layouts/NormalLayout.vue';
@@ -31,6 +32,7 @@ export const getDefaultRoutes = (): Array<RouteRecordRaw> => [
       ...tag,
       ...token,
       ...plugin,
+      ...ifm,
     ],
   },
 ];
@@ -47,6 +49,7 @@ export const getDefaultSidebarMenuItems = (): MenuItem[] => {
     {path: '/tags', title: 'router.menuItems.tags', icon: ['fa', 'tag']},
     {path: '/tokens', title: 'router.menuItems.tokens', icon: ['fa', 'key']},
     {path: '/plugins', title: 'router.menuItems.plugins', icon: ['fa', 'plug']},
+    {path: '/ifm', title: 'router.menuItems.ifm', icon: ['fa', 'chart-pie']},
   ];
 };
 

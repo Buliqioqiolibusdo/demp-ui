@@ -5,9 +5,11 @@ const user: LComponentsUser = {
     changePassword: 'Change Password',
     email: 'Email',
     role: 'Role',
+    name: 'Name',
     newPassword: 'New Password',
   },
   role: {
+    root: 'root',
     admin: 'Admin',
     normal: 'Normal',
   },

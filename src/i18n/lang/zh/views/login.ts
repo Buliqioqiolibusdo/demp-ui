@@ -13,7 +13,7 @@ const login: LViewsLogin = {
   },
   referenceFrom: {
     label: '代码参考自',
-    content: 'Crawlab-UI',
+    content: '基于 Crawlab-v0.6',
   },
   initial: {
     title: '初始用户名/密码',

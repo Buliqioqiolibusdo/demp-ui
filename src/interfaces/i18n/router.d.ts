@@ -10,6 +10,7 @@ interface LRouter {
     tags: string;
     tokens: string;
     plugins: string;
+    ifm: string;
     misc: {
       disclaimer: string;
       mySettings: string;

@@ -10,6 +10,7 @@ const router: LRouter = {
     tags: '标签',
     tokens: '令牌',
     plugins: '插件',
+    ifm: '监控',
     misc: {
       disclaimer: '免责声明',
       mySettings: '我的设置',

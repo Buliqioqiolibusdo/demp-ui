@@ -24,7 +24,7 @@
           开发版
           </div>
           <div class="logo-sub-title-block">
-            Bata
+            Bata v1.0.0 
           </div>
         </span>
       </div>
@@ -62,6 +62,8 @@ import logo from '@/assets/xccinner1.jpg';
 import MenuItemIcon from '@/components/icon/MenuItemIcon.vue';
 import {getPrimaryPath} from '@/utils/path';
 import {useI18n} from 'vue-i18n';
+
+// console.log(computed)
 
 export default defineComponent({
   name: 'Sidebar',

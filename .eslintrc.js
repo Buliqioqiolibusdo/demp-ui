@@ -21,5 +21,7 @@ module.exports = {
     '@typescript-eslint/explicit-module-boundary-types': process.env.NODE_ENV === 'production' ? 'warn' : 'off',
     '@typescript-eslint/ban-ts-comment': process.env.NODE_ENV === 'production' ? 'warn' : 'off',
     '@typescript-eslint/ban-types': process.env.NODE_ENV === 'production' ? 'warn' : 'off',
+    "no-unused-vars": 'off',
+    // "plugin":"@typescript-eslint/recommended"
   }
 }

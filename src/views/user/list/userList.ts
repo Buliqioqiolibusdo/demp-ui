@@ -78,7 +78,7 @@ const useUserList = () => {
       key: 'role',
       label: t('views.users.table.columns.role'),
       icon: ['fa', 'font'],
-      width: '150',
+      width: '100',
       value: (row: User) => h(UserRole, {role: row.role} as UserRoleProps),
       hasFilter: true,
       allowFilterItems: true,
@@ -88,9 +88,15 @@ const useUserList = () => {
       ],
     },
     {
+      key: 'name',
+      label: t('views.users.table.columns.name'),
+      icon: ['fa', 'font'],
+      width: '180',
+    },
+    {
       key: TABLE_COLUMN_NAME_ACTIONS,
       label: t('components.table.columns.actions'),
-      fixed: 'right',
+      // fixed: 'right',
       width: '200',
       buttons: [
         {

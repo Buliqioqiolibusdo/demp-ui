@@ -20,6 +20,47 @@
         :placeholder="t('components.user.form.username')"
       />
     </FormItem>
+      <FormItem
+      :span="2"
+      :label="t('components.user.form.name')"
+      prop="name"
+    >
+      <el-input
+        v-model="form.name"
+        :disabled="isFormItemDisabled('name')"
+        :placeholder="t('components.user.form.name')"
+        type="name"
+      />
+    </FormItem>
+
+    <!-- ./Row -->
+
+    <!-- Row -->
+
+    <FormItem
+      :span="2"
+      :label="t('components.user.form.role')"
+      prop="role"
+      required
+    >
+      <el-select v-model="form.role" :disabled="isFormItemDisabled('role')">
+        <el-option :value="ROLE_ADMIN" :label="t('components.user.role.admin')"/>
+        <el-option :value="ROLE_NORMAL" :label="t('components.user.role.normal')"/>
+      </el-select>
+    </FormItem>
+        <FormItem
+      :span="2"
+      :label="t('components.user.form.email')"
+      prop="email"
+    >
+      <el-input
+        v-model="form.email"
+        :disabled="isFormItemDisabled('email')"
+        :placeholder="t('components.user.form.email')"
+        type="email"
+      />
+    </FormItem>
+    <!-- ./Row -->
     <FormItem
       :span="2"
       :label="t('components.user.form.password')"
@@ -40,32 +81,6 @@
         type="danger"
         @click="onChangePassword"
       />
-    </FormItem>
-    <!-- ./Row -->
-
-    <!-- Row -->
-    <FormItem
-      :span="2"
-      :label="t('components.user.form.email')"
-      prop="email"
-    >
-      <el-input
-        v-model="form.email"
-        :disabled="isFormItemDisabled('email')"
-        :placeholder="t('components.user.form.email')"
-        type="email"
-      />
-    </FormItem>
-    <FormItem
-      :span="2"
-      :label="t('components.user.form.role')"
-      prop="role"
-      required
-    >
-      <el-select v-model="form.role" :disabled="isFormItemDisabled('role')">
-        <el-option :value="ROLE_ADMIN" :label="t('components.user.role.admin')"/>
-        <el-option :value="ROLE_NORMAL" :label="t('components.user.role.normal')"/>
-      </el-select>
     </FormItem>
     <!-- ./Row -->
   </Form>

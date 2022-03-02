@@ -5,7 +5,7 @@ import useUserService from '@/services/user/userService';
 import {getDefaultFormComponentData} from '@/utils/form';
 import {FORM_FIELD_TYPE_INPUT, FORM_FIELD_TYPE_INPUT_PASSWORD, FORM_FIELD_TYPE_SELECT,} from '@/constants/form';
 import {getModeOptions} from '@/utils/task';
-import {ROLE_ADMIN, ROLE_NORMAL} from '@/constants/user';
+import {ROLE_ADMIN, ROLE_NORMAL, ROLE_ROOT} from '@/constants/user';
 import {ElMessage, ElMessageBox} from 'element-plus';
 import {sendEvent} from '@/admin/umeng';
 import {translate} from '@/utils/i18n';
@@ -50,12 +50,20 @@ const useUser = (store: Store<RootStoreState>) => {
       placeholder: 'Email',
     },
     {
+      prop: 'name',
+      label: 'Name',
+      width: '150',
+      fieldType: FORM_FIELD_TYPE_INPUT,
+      placeholder: 'name',
+    },
+    {
       prop: 'role',
       label: 'Role',
       width: '150',
       placeholder: 'Role',
       fieldType: FORM_FIELD_TYPE_SELECT,
       options: [
+        {label: 'Root', value: ROLE_ROOT},
         {label: 'Admin', value: ROLE_ADMIN},
         {label: 'Normal', value: ROLE_NORMAL},
       ],
@@ -100,8 +108,14 @@ const useUser = (store: Store<RootStoreState>) => {
 
     sendEvent('click_user_form_change_password');
 
-    await store.dispatch(`${ns}/changePassword`, {id, password: value});
-    await ElMessage.success(t('common.message.success.save'));
+    const ret = await store.dispatch(`${ns}/changePassword`, {id, password: value});
+      // console.log(ret)
+      if (ret && ret.message == 'success'){
+        ElMessage.success(t('common.message.success.save'));
+      }else{
+        ElMessage.success(t('common.message.error.save'));
+      }
+      // console.log(2323232)
   };
 
   return {

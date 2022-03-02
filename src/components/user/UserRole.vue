@@ -7,7 +7,7 @@
 
 <script lang="ts">
 import {computed, defineComponent, PropType} from 'vue';
-import {ROLE_ADMIN} from '@/constants/user';
+import {ROLE_ADMIN,ROLE_ROOT} from '@/constants/user';
 
 export default defineComponent({
   name: 'UserRole',
@@ -22,18 +22,36 @@ export default defineComponent({
   setup(props: UserRoleProps, {emit}) {
     const type = computed<string>(() => {
       const {role} = props;
-      return role === ROLE_ADMIN ? '' : 'warning';
+      if(role === ROLE_ROOT){
+        return 'warning'
+      }else if(role === ROLE_ADMIN){
+        return 'primary'
+      }else {
+        return 'success'
+      }
     });
 
     const computedLabel = computed<string>(() => {
       const {role, label} = props;
       if (label) return label;
-      return role === ROLE_ADMIN ? 'Admin' : 'Normal';
+      if(role === ROLE_ROOT){
+        return 'Root'
+      }else if(role === ROLE_ADMIN){
+        return 'Admin'
+      }else {
+        return 'Normal'
+      }
     });
 
     const icon = computed<string[]>(() => {
       const {role} = props;
-      return role === ROLE_ADMIN ? ['fa', 'star'] : ['fa', 'user'];
+      if(role === ROLE_ROOT){
+        return ['fa', 'lock']
+      }else if(role === ROLE_ADMIN){
+        return ['fa', 'star']
+      }else {
+        return ['fa','user']
+      }
     });
 
     return {

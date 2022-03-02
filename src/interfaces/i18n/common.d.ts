@@ -41,6 +41,7 @@ interface LCommon {
       start: string;
       deleteSelected: string;
       loginAgain: string;
+      // unauthorizedConfirm: string;
     };
   };
   message: {
@@ -57,6 +58,7 @@ interface LCommon {
       stop: string;
     };
     error: {
+      save: string;
       login: string;
     };
   };

@@ -60,11 +60,16 @@ const config = {
     open: true, 
     proxy: {
       '/api': {
-        target: "http://81.71.17.84:8080/api",  
+        // target: "http://81.71.17.84:8080/api",  
+        target: "http://localhost:8000",  
         changeOrigin: true, 
         pathRewrite: {
           '^/api': ''
         }
+      },
+      '/grafana': {
+        target: "http://81.71.17.84:3000/d/AVE/scrapyjin-du-shi-tu?orgId=1&refresh=5s&var-spider=inc_baijiahaocrawl",  
+        changeOrigin: true,
       },
     },
     disableHostCheck: true

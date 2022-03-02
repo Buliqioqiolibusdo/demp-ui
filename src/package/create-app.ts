@@ -10,6 +10,7 @@ import {importScripts, importStylesheets, initWindowGlobals} from '@/package/uti
 import {createRouter} from '@/router';
 import {initPlugins} from '@/utils/plugin';
 import {initRequest} from '@/services/request';
+// import {DisallowedRequest} from '@/services/request';
 import {initUmeng} from '@/admin/umeng';
 import {setGlobalLang} from '@/utils/i18n';
 import track from '@/directives/track/track';
@@ -73,6 +74,9 @@ const createApp = async (options?: CreateAppOptions): Promise<VueApp> => {
 
   // initialize request
   initRequest(router);
+
+  // // initialize request
+  // DisallowedRequest(router);
 
   // load modules
   if (options.loadStore) app.use(store);

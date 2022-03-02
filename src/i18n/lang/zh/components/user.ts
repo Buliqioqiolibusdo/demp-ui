@@ -5,9 +5,11 @@ const user: LComponentsUser = {
     changePassword: '更改密码',
     email: '邮箱',
     role: '角色',
+    name: '名字',
     newPassword: '新密码',
   },
   role: {
+    root: '超级管理员',
     admin: '管理员',
     normal: '普通用户',
   },

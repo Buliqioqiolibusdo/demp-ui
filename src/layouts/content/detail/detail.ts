@@ -131,24 +131,28 @@ const useDetail = <T = BaseModel>(ns: ListStoreNamespace) => {
     sendEvent('click_detail_layout_on_back');
   };
 
-  const onSave = async () => {
-    if (!activeId.value) {
-      console.error('Active id is empty');
-      return;
-    }
-    await store.dispatch(`${ns}/updateById`, {id: activeId.value, form: state.form});
-    ElMessage.success(t('common.message.success.save'));
+  const onSave = async() =>{
+      // console.log(2323232)
+      if (!activeId.value) {
+        console.error('Active id is empty');
+        return;
+      }
+      
+      const ret = await store.dispatch(`${ns}/updateById`, {id: activeId.value, form: state.form});
+      // console.log(ret)
+      if (ret && ret.message == 'success'){
+        ElMessage.success(t('common.message.success.save'));
+      }else{
+        ElMessage.success(t('common.message.error.save'));
+      }
+    console.log(t('common.message.error.save'))
     await Promise.all([
       store.dispatch(`${ns}/getAllList`),
       store.dispatch(`${ns}/getById`, activeId.value),
     ]);
-
-    // after save
-    afterSave.value.map(fn => fn());
-
-    sendEvent('click_detail_layout_on_save');
-  };
-
+      afterSave.value.map(fn => fn());
+      sendEvent('click_detail_layout_on_save');
+  }
   // get form before mount
   onBeforeMount(getForm);
 

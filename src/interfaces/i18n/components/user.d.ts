@@ -5,9 +5,11 @@ interface LComponentsUser {
     changePassword: string;
     email: string;
     role: string;
+    name: string;
     newPassword: string;
   };
   role: {
+    root: string;
     admin: string;
     normal: string;
   };

@@ -10,6 +10,7 @@ const router: LRouter = {
     tags: 'Tags',
     tokens: 'Tokens',
     plugins: 'Plugins',
+    ifm: 'Monitoring',
     misc: {
       disclaimer: 'Disclaimer',
       mySettings: 'My Settings',

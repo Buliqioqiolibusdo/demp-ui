@@ -33,7 +33,8 @@ const common: LCommon = {
       install: '您是否确定安装?',
       start: '您是否确定启动?',
       deleteSelected: '您是否确定删除已选项?',
-      loginAgain: '您似乎已被登出, 是否尝试重新登陆?',
+      loginAgain: '你的权限不够,请联系管理员或更换身份登陆!',
+      // unauthorizedConfirm: '你的权限貌似不够,请联系管理员!',
     }
   },
   message: {
@@ -51,6 +52,7 @@ const common: LCommon = {
     },
     error: {
       login: '登陆失败',
+      save: '保存失败,请联系管理员同事',
     },
   },
   tabs: {

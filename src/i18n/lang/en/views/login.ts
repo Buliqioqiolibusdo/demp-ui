@@ -13,7 +13,7 @@ const login: LViewsLogin = {
   },
   referenceFrom: {
     label: 'Reference',
-    content: 'Crawlab-UI',
+    content: 'Based on the Crawlab-v0.6',
   },
   initial: {
     title: 'Initial Username/Password',

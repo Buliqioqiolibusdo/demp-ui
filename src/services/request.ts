@@ -29,7 +29,7 @@ export const initRequest = (router?: Router) => {
           t('common.status.unauthorized'),
           {type: 'warning'},
         )
-          .then(_ => router?.push('/login'))
+          .catch(_ => router?.push('/login'))
           .finally(() => {
             msgBoxVisible = false;
           });

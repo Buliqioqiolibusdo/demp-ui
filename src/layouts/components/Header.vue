@@ -40,7 +40,7 @@
         <el-dropdown class="me">
           <span class="el-dropdown-link item action ">
             <font-awesome-icon class="icon" :icon="['far', 'user']"/>
-            {{ username }}
+            {{ name }}
             <el-icon class="el-icon--right">
               <arrow-down/>
             </el-icon>
@@ -48,8 +48,8 @@
           <template #dropdown>
             <el-dropdown-menu>
               <el-dropdown-item>
-                Signed in as 
-                <strong class="css-truncate-target">buliqioqio</strong>
+                welcome 
+                <strong class="css-truncate-target">{{ username }}</strong>
               </el-dropdown-item>
               <el-dropdown-item
                 v-track="{code: 'click_header_my_settings'}"
@@ -124,11 +124,19 @@ export default defineComponent({
       setGlobalLang(lang);
     };
 
+    // current user's name
+    const name = computed<string | undefined>(() => {
+      console.warn('fdgfgfgfgfgfgfgfg');
+      const me = store.getters['user/me'] as User | undefined;
+    console.warn(store);
+      if (!me) return;
+      return me.name;
+    });
     // current user's username
     const username = computed<string | undefined>(() => {
       console.warn('fdgfgfgfgfgfgfgfg');
       const me = store.getters['user/me'] as User | undefined;
-console.warn(store);
+    console.warn(store);
       if (!me) return;
       return me.username;
     });
@@ -163,6 +171,7 @@ console.warn(store);
       locale,
       langName,
       username,
+      name,
       setLang,
       onLogout,
       // onClickDisclaimer,
