@@ -3,7 +3,7 @@
     <Sidebar />
     <el-container :class="sidebarCollapsed ? 'collapsed' : ''" class="container">
       <Header />
-      <TabsView />
+      <!-- <TabsView /> 副标签相关 -->
       <div class="container-body">
         <router-view />
       </div>
@@ -16,12 +16,12 @@ import {computed, defineComponent} from 'vue';
 import Header from './components/Header.vue';
 import Sidebar from './components/Sidebar.vue';
 import {useStore} from 'vuex';
-import TabsView from '@/layouts/components/TabsView.vue';
+// import TabsView from '@/layouts/components/TabsView.vue'; //副标签相关
 
 export default defineComponent({
   name: 'NormalLayout',
   components: {
-    TabsView,
+    // TabsView, //副标签相关
     Header,
     Sidebar,
   },

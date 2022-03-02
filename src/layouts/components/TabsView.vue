@@ -27,6 +27,7 @@
   </div>
 </template>
 <script lang="ts">
+// 副标签相关
 import {computed, defineComponent, onMounted, watch} from 'vue';
 import {useStore} from 'vuex';
 import TabComp from '@/components/tab/Tab.vue';
@@ -34,7 +35,7 @@ import {useRoute, useRouter} from 'vue-router';
 import DraggableList from '@/components/drag/DraggableList.vue';
 import {plainClone} from '@/utils/object';
 import ActionTab from '@/components/tab/ActionTab.vue';
-
+//  副标签相关
 export default defineComponent({
   name: 'TabsView',
   components: {
@@ -123,7 +124,7 @@ export default defineComponent({
     };
   }
 });
-</script>
+</script>  //副标签相关
 <style lang="scss" scoped>
 @import "../../styles/variables";
 
