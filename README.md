@@ -1,4 +1,4 @@
-# Crawlab-UI
+# DEMP-UI
 
 This is the UI components and modules to support the frontend development
 for [Crawlab](https://github.com/crawlab-team/crawlab).
