@@ -1,15 +1,9 @@
 {
-  "name": "DEMP",
-  "version": "0.6.0-beta.20220128.1900",
+  "name": "demp",
+  "version": "v1.0.1",
   "private": false,
-  "author": {
-    "name": "Marvin Zhang",
-    "email": "tikazyq@163.com"
-  },
-  "repository": {
-    "type": "git",
-    "url": "https://github.com/crawlab-team/crawlab-ui"
-  },
+  "author": "buliqioqiolibusdo <dingyeran@163.com>",
+  "repository": "https://github.com/buliqioqiolibusdo/demp-ui",
   "license": "BSD-3-Clause",
   "scripts": {
     "serve": "vue-cli-service serve --port=8081",
