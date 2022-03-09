@@ -1,6 +1,6 @@
 {
   "name": "demp-ui",
-  "version": "v1.0.1",
+  "version": "1.0.2",
   "private": false,
   "author": "buliqioqiolibusdo <dingyeran@163.com>",
   "repository": "https://github.com/buliqioqiolibusdo/demp-ui",
@@ -95,7 +95,7 @@
     "typescript": "^4.5.3",
     "webpack-bundle-analyzer": "^4.5.0"
   },
-  "main": "dist/crawlab-ui.umd.min.js",
+  "main": "dist/demp-ui.umd.min.js",
   "files": [
     "dist",
     "public",
