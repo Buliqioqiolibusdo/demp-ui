@@ -34,9 +34,11 @@ const genIndex = (moduleName) => {
   rd.eachSync(modulePath, (f, s) => {
     // skip non-vue files
     if (!f.endsWith('.vue')) return
-
+    
     // relative path
     const relPath = `.${f.replace(modulePath, '')}`
+    let relPath = `.${f.replace(modulePath, '')}`
+    relPath = relPath.replace(/\\/ig, '/')
 
     // file name
     const fileName = path.basename(f)
