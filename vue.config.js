@@ -55,25 +55,25 @@ const alias = {
 }
 
 const config = {
-  devServer: {
-    host: '0.0.0.0', 
-    open: true, 
-    proxy: {
-      '/api': {
-        // target: "http://81.71.17.84:8080/api",  
-        target: "http://localhost:8000",  
-        changeOrigin: true, 
-        pathRewrite: {
-          '^/api': ''
-        }
-      },
-      '/grafana': {
-        target: "http://81.71.17.84:3000/d/AVE/scrapyjin-du-shi-tu?orgId=1&refresh=5s&var-spider=inc_baijiahaocrawl",  
-        changeOrigin: true,
-      },
-    },
-    disableHostCheck: true
-  },
+  // devServer: {
+  //   host: '0.0.0.0', 
+  //   open: true, 
+  //   proxy: {
+  //     '/api': {
+  //       // target: "http://81.71.17.84:8080/api",  
+  //       target: "http://localhost:8000",  
+  //       changeOrigin: true, 
+  //       pathRewrite: {
+  //         '^/api': ''
+  //       }
+  //     },
+  //     '/grafana': {
+  //       target: "http://81.71.17.84:3000/d/AVE/scrapyjin-du-shi-tu?orgId=1&refresh=5s&var-spider=inc_baijiahaocrawl",  
+  //       changeOrigin: true,
+  //     },
+  //   },
+  //   disableHostCheck: true
+  // },
   outputDir: './dist',
   configureWebpack: {
     plugins: [],
@@ -111,7 +111,7 @@ if (['production'].includes(process.env.NODE_ENV)) {
   config.configureWebpack.plugins.push(new CopyWebpackPlugin({
     patterns: [
       {
-        from: path.resolve(__dirname, 'public/js'),
+        from: path.resolve(__dirname, 'public/'),
       }
     ]
   }))
